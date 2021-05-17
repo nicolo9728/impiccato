@@ -82,7 +82,7 @@ class _PartitaState extends State<Partita> implements IEvento {
                 child: Text(
                   "Invia",
                   style: TextStyle(color: Colors.black),
-                ))
+                )),
           ],
         ),
       ),

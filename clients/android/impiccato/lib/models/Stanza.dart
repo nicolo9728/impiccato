@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
@@ -8,7 +9,7 @@ import 'package:impiccato/models/Status.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-class Stanza implements IEvento {
+class Stanza with IterableMixin<Giocatore> implements IEvento {
   String _parolaParziale;
   List<Giocatore> _giocatori = [];
   String _nome;
@@ -152,4 +153,7 @@ class Stanza implements IEvento {
     channel.sink.add(jsonEncode({"nomeEvento": "joinStanza", "data": nome}));
     listen(onSuccesso, onFallimento);
   }
+
+  @override
+  Iterator<Giocatore> get iterator => _giocatori.iterator;
 }
