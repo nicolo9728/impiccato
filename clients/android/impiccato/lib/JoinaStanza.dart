@@ -29,7 +29,10 @@ class _JoinaStanzaState extends State<JoinaStanza> {
             context: context,
             builder: (context) => AlertDialog(
                   title: Text("Errore"),
-                  content: Text("stanza non trovata"),
+                  content: Text(
+                    "stanza non trovata",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ));
       });
     } catch (e) {
@@ -37,7 +40,10 @@ class _JoinaStanzaState extends State<JoinaStanza> {
           context: context,
           builder: (context) => AlertDialog(
                 title: Text("Errore"),
-                content: Text(e.toString()),
+                content: Text(
+                  e.toString(),
+                  style: TextStyle(color: Colors.black),
+                ),
               ));
     }
   }

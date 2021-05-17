@@ -106,8 +106,11 @@ class _PartitaState extends State<Partita> implements IEvento {
         showDialog(
             context: context,
             builder: (context) => AlertDialog(
-                  title: Text("Complimenti hai vinto"),
-                  content: Text("Buon per te"),
+                  title: Text("Hai vinto !!"),
+                  content: Text(
+                    "Buon per te",
+                    style: TextStyle(color: Colors.black),
+                  ),
                   actions: [TextButton(onPressed: chiudi, child: Text("Fine"))],
                 ));
       else
@@ -115,7 +118,10 @@ class _PartitaState extends State<Partita> implements IEvento {
             context: context,
             builder: (context) => AlertDialog(
                   title: Text("Hai perso !!"),
-                  content: Text("Sarai piu fortunato"),
+                  content: Text(
+                    "Sarai piu fortunato",
+                    style: TextStyle(color: Colors.black),
+                  ),
                   actions: [TextButton(onPressed: chiudi, child: Text("Fine"))],
                 ));
     }

@@ -29,7 +29,10 @@ class _CreaStanzaState extends State<CreaStanza> {
             context: context,
             builder: (context) => AlertDialog(
                   title: Text("Errore"),
-                  content: Text("il nome della stanza e gia stato usato"),
+                  content: Text(
+                    "il nome della stanza e gia stato usato",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ));
       });
     } catch (e) {
@@ -37,7 +40,10 @@ class _CreaStanzaState extends State<CreaStanza> {
           context: context,
           builder: (context) => AlertDialog(
                 title: Text("Errore"),
-                content: Text(e.toString()),
+                content: Text(
+                  e.toString(),
+                  style: TextStyle(color: Colors.black),
+                ),
               ));
     }
   }
