@@ -12,6 +12,7 @@ server.on("connection", (socket) => {
     console.log("ciao")
 
     let stanza: Stanza | null = null;
+    let nome = "";
 
     socket.onmessage = (evento) => {
         const messaggio = <Evento>JSON.parse(evento.data as string);
@@ -30,7 +31,7 @@ server.on("connection", (socket) => {
                 }
                 else
                     socket.send(JSON.stringify({ nomeEvento: "creazioneStanza", data: {successo: false} }))
-
+                
 
                 break;
             case "joinStanza":
@@ -67,6 +68,7 @@ server.on("connection", (socket) => {
             stanze.splice(index, 1)
             console.log("eliminata " + index);
         }
+
     }
 })
 
