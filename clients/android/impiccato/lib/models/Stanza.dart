@@ -24,7 +24,7 @@ class Stanza with IterableMixin<Giocatore> implements IEvento {
   Stanza(String nome) {
     this.nome = nome;
     _vinto = false;
-    channel = IOWebSocketChannel.connect("ws://192.168.1.148:5000");
+    channel = IOWebSocketChannel.connect("ws://20.199.109.89:5000");
   }
 
   void listen(Function onSuccesso, Function onFallimento) {
